@@ -6,4 +6,68 @@
     android:layout_height="match_parent"
     tools:context=".ui.addSubtask.AddSubtaskActivity">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="164dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_trakk_01" />
+
+    <TextView
+        android:id="@+id/subtaskLabel"
+        android:layout_width="119dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="177dp"
+        android:text="@string/subtask_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.295"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <EditText
+        android:id="@+id/subtaskName"
+        android:layout_width="220dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="80dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/subtaskLabel"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <EditText
+        android:id="@+id/subtaskDescription"
+        android:layout_width="212dp"
+        android:layout_height="103dp"
+        android:layout_marginTop="280dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/descriptionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/subtask_description"
+        app:layout_constraintBottom_toTopOf="@+id/subtaskDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/subtask_save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subtaskDescription" />
 </androidx.constraintlayout.widget.ConstraintLayout>
