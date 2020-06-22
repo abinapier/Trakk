@@ -10,6 +10,7 @@ public class User {
         goals = new ArrayList<>();
     }
 
+
     public void addGoal(Goals newGoal){
         goals.add(newGoal);
     }
