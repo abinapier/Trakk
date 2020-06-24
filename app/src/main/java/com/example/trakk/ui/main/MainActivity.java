@@ -3,10 +3,14 @@ package com.example.trakk.ui.main;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.trakk.R;
+import com.example.trakk.ui.addGoal.AddGoalActivity;
+import com.example.trakk.ui.addGoal.AddGoalActivity;
 
 import java.lang.ref.WeakReference;
 
@@ -22,11 +26,11 @@ public class MainActivity extends AppCompatActivity {
         presenterThread.start();
     }
 
-    public void addGoal(View view){
-
-    }
-
     public void viewGoalDetail(View view){
 
+    }
+    public void addGoalButton(View view){
+        Intent intent = new Intent(MainActivity.this, AddGoalActivity.class);
+        startActivity(intent);
     }
 }
