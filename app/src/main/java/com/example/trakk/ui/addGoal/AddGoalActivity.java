@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -18,6 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.trakk.R;
+import com.example.trakk.ui.addSubtask.AddSubtaskActivity;
+import com.example.trakk.ui.main.MainActivity;
 
 import org.w3c.dom.Text;
 
@@ -78,6 +81,10 @@ public class AddGoalActivity extends AppCompatActivity implements AdapterView.On
     @Override
     public void onNothingSelected(AdapterView<?> adapterView){
 
+    }
+    public void addTaskButon(View view){
+        Intent intent = new Intent(this, AddSubtaskActivity.class);
+        startActivity(intent);
     }
 }
 
