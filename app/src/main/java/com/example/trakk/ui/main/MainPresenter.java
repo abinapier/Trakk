@@ -5,7 +5,6 @@ import android.util.Log;
 import android.view.Gravity;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.trakk.R;
 import com.example.trakk.model.FileHelper;
