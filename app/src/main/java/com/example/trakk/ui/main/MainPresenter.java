@@ -46,13 +46,17 @@ public class MainPresenter implements Runnable{
                             //get user object from file
                             user = FileHelper.ReadFile(context.getFilesDir().toString());
                             //loop through each goal in file
+                            int goalcount = 0;
                             for (Goals goal: user.getGoals()) {
+                                goalcount++;
+                                String tag = "goalNum"+goalcount;
                                 Log.d(TAG, "run: Goal Found");
                                 FragmentManager fm = ui.get().getSupportFragmentManager();
                                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
                                 GoalPreviewFragment newFragment = new GoalPreviewFragment(goal);
-                                fragmentTransaction.add(R.id.goalPreviewContainer, newFragment, "HELLO");
+                                fragmentTransaction.add(R.id.goalPreviewContainer, newFragment, tag );
                                 fragmentTransaction.commit();
+
                             }
                         } catch (IOException e) {
                             e.printStackTrace();

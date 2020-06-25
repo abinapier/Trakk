@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.example.trakk.R;
 import com.example.trakk.ui.addGoal.AddGoalActivity;
+import com.example.trakk.ui.goalDetail.GoalDetailActivity;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;
@@ -28,11 +29,14 @@ public class MainActivity extends AppCompatActivity {
         presenterThread.start();
     }
 
-    public void viewGoalDetail(View view){
 
-    }
     public void addGoalButton(View view){
         Intent intent = new Intent(MainActivity.this, AddGoalActivity.class);
+        startActivity(intent);
+    }
+
+    public void viewGoalDetail(View view){
+        Intent intent = new Intent(MainActivity.this, GoalDetailActivity.class);
         startActivity(intent);
     }
 }

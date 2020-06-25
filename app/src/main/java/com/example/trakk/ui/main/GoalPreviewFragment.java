@@ -1,5 +1,6 @@
 package com.example.trakk.ui.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,6 +12,8 @@ import android.view.ViewGroup;
 
 import com.example.trakk.R;
 import com.example.trakk.model.Goals;
+import com.example.trakk.ui.addGoal.AddGoalActivity;
+import com.example.trakk.ui.goalDetail.GoalDetailActivity;
 
 public class GoalPreviewFragment extends Fragment {
     public GoalPreviewPresenter presenter;
@@ -28,4 +31,6 @@ public class GoalPreviewFragment extends Fragment {
 
         return presenter.populateFragment(rootView);
     }
+
+
 }
