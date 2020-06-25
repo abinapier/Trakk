@@ -18,4 +18,15 @@ public class User {
     public List<Goals> getGoals() {
         return goals;
     }
+
+    @Override
+    public String toString() {
+        String usrString = "User { goals = {";
+        for(Goals goal: goals){
+            usrString+=goal.toString();
+        }
+        usrString +="}}";
+
+        return usrString;
+    }
 }

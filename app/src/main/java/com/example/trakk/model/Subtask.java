@@ -33,4 +33,13 @@ public class Subtask {
 
     public void setName(String name) { this.name = name; }
     public String getName() { return name; }
+
+    @Override
+    public String toString() {
+        return "Subtask{" +
+                "description='" + description + '\'' +
+                ", name='" + name + '\'' +
+                ", complete=" + complete +
+                '}';
+    }
 }

@@ -8,15 +8,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
 import com.example.trakk.R;
+import com.example.trakk.model.Goals;
 
 public class GoalPreviewFragment extends Fragment {
+    public GoalPreviewPresenter presenter;
+
+    //you need to pass a goal in order to create a new fragment
+    public GoalPreviewFragment(Goals curGoal){
+        presenter = new GoalPreviewPresenter(curGoal);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_goal_preview, container, false);
-        return rootView;
+
+        return presenter.populateFragment(rootView);
     }
 }

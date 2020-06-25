@@ -25,14 +25,14 @@
             android:textSize="24sp" />
 
         <ProgressBar
-            android:id="@+id/progressBar8"
+            android:id="@+id/goalProgress"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:progress="80" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/percentComplete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="80% complete"
