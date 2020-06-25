@@ -32,9 +32,10 @@
         android:id="@+id/subtaskName"
         android:layout_width="220dp"
         android:layout_height="34dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="76dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:paddingVertical="0dp"
         app:layout_constraintStart_toEndOf="@+id/subtaskLabel"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
@@ -65,6 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
+        android:onClick="saveSubtask"
         android:text="@string/subtask_save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

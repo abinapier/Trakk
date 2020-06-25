@@ -2,9 +2,15 @@ package com.example.trakk.model;
 
 public class Subtask {
     private String description;
+    private String name;
     private boolean complete;
 
-    public Subtask(String description){
+    public Subtask() {
+
+    }
+
+    public Subtask(String description, String name){
+        this.name = name;
         this.description = description;
         complete = false;
     }
@@ -24,4 +30,7 @@ public class Subtask {
     public boolean isComplete() {
         return complete;
     }
+
+    public void setName(String name) { this.name = name; }
+    public String getName() { return name; }
 }
