@@ -13,9 +13,11 @@ import com.example.trakk.ui.goalDetail.GoalDetailActivity;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 
+import android.widget.AdapterView.OnItemClickListener;
+
 public class MainActivity extends AppCompatActivity {
     private MainPresenter presenter;
-
+    ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +29,22 @@ public class MainActivity extends AppCompatActivity {
         }
         Thread presenterThread = new Thread(presenter);
         presenterThread.start();
+
+        CustomListAdapter goalDetail = new CustomListAdapter(this, nameArray, infoArray, imageArray);
+        listView = (ListView) findViewById(R.id.listviewID);
+        listView.setAdapter(goalDetail);
+
+        listView.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id) {
+                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                String message = nameArray[position];
+                intent.putExtra("animal", message);
+                startActivity(intent);
+
+            }
+        });
     }
 
 
