@@ -86,5 +86,7 @@ public class AddGoalActivity extends AppCompatActivity implements AdapterView.On
         Intent intent = new Intent(this, AddSubtaskActivity.class);
         startActivity(intent);
     }
+
+
 }
 

@@ -2,8 +2,13 @@ package com.example.trakk.ui.goalDetail;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+
 import com.example.trakk.R;
+import com.example.trakk.ui.addSubtask.AddSubtaskActivity;
+import com.example.trakk.ui.main.MainActivity;
 
 public class GoalDetailActivity extends AppCompatActivity {
 
@@ -15,5 +20,10 @@ public class GoalDetailActivity extends AppCompatActivity {
 
     public void updateProgress(){
 
+    }
+
+    public void viewAddSubtask(View view){
+        Intent intent = new Intent(GoalDetailActivity.this, AddSubtaskActivity.class);
+        startActivity(intent);
     }
 }
