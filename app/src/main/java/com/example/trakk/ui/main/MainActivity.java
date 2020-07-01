@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.trakk.CustomListAdapter;
 import com.example.trakk.R;
 import com.example.trakk.ui.addGoal.AddGoalActivity;
 import com.example.trakk.ui.goalDetail.GoalDetailActivity;
@@ -14,6 +15,7 @@ import java.io.IOException;
 import java.lang.ref.WeakReference;
 
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
     private MainPresenter presenter;
