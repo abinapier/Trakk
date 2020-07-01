@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.trakk.R;
 import com.example.trakk.ui.addGoal.AddGoalActivity;
@@ -40,9 +43,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void viewGoalDetail(View view){
         Intent myIntent = new Intent(this, GoalDetailActivity.class);
-        Log.d(TAG, "viewGoalDetail: "+view.getId());
-        myIntent.putExtra("firstKeyName","FirstKeyValue");
-        myIntent.putExtra("secondKeyName","SecondKeyValue");
+        ViewGroup myView = (ViewGroup) view;
+        ViewGroup clickedFragment = (ViewGroup) myView.getChildAt(1);
+        TextView goalName = (TextView) clickedFragment.getChildAt(0);
+        Log.d(TAG, "viewGoalDetail: "+goalName.getText());
+        myIntent.putExtra("goalName",goalName.getText());
         startActivity(myIntent);
     }
 }
