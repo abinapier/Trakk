@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.example.trakk.CustomListAdapter;
@@ -18,6 +19,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "main activity view";
     private MainPresenter presenter;
     ListView listView;
     @Override
@@ -56,7 +58,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void viewGoalDetail(View view){
-        Intent intent = new Intent(MainActivity.this, GoalDetailActivity.class);
-        startActivity(intent);
+        Intent myIntent = new Intent(this, GoalDetailActivity.class);
+        Log.d(TAG, "viewGoalDetail: "+view.getId());
+        myIntent.putExtra("firstKeyName","FirstKeyValue");
+        myIntent.putExtra("secondKeyName","SecondKeyValue");
+        startActivity(myIntent);
     }
 }
