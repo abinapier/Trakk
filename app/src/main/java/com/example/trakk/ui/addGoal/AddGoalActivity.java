@@ -86,6 +86,11 @@ public class AddGoalActivity extends AppCompatActivity implements AdapterView.On
         Intent intent = new Intent(this, AddSubtaskActivity.class);
         startActivity(intent);
     }
+    public void editGoalButton(View view){
+        Intent intent = new Intent(this, AddGoalActivity.class);
+        startActivity(intent);
+    }
+
 
 
 }

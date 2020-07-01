@@ -38,7 +38,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void viewGoalDetail(View view){
-        Intent intent = new Intent(MainActivity.this, GoalDetailActivity.class);
-        startActivity(intent);
+        Intent myIntent = new Intent(this, GoalDetailActivity.class);
+        Log.d(TAG, "viewGoalDetail: "+view.getId());
+        myIntent.putExtra("firstKeyName","FirstKeyValue");
+        myIntent.putExtra("secondKeyName","SecondKeyValue");
+        startActivity(myIntent);
     }
 }
