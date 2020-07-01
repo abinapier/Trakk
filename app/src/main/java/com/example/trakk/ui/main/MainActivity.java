@@ -14,6 +14,7 @@ import com.example.trakk.ui.goalDetail.GoalDetailActivity;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 
+
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "main activity view";
     private MainPresenter presenter;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         try {
-            presenter = new MainPresenter(new WeakReference<MainActivity>(this));
+            presenter = new MainPresenter(new WeakReference<>(this));
         } catch (IOException e) {
             e.printStackTrace();
         }
