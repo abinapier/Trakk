@@ -3,6 +3,8 @@ package com.example.trakk.model;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 public class Goals {
@@ -11,12 +13,14 @@ public class Goals {
     private String goalName;
     private String description;
     private boolean complete;
+    private Date endDate;
 
-    public Goals(String name, String description){
+    public Goals(String name, String description, Date endDate){
         this.goalName = name;
         tasks = new ArrayList<>();
         complete = false;
         this.description = description;
+        this.endDate = endDate;
     }
 
     //optional description constructor
@@ -25,6 +29,7 @@ public class Goals {
         tasks = new ArrayList<>();
         complete = false;
         this.description = "";
+        endDate = null;
     }
 
     public List<Subtask> getTasks() {
@@ -59,6 +64,14 @@ public class Goals {
         return complete;
     }
 
+    public Date getEndDate(){
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
     public int calculatePercentComplete(){
         double total = 0;
         double complete = 0;
@@ -85,7 +98,8 @@ public class Goals {
         String goalString = "Goals{" +
                 ", goalName='" + goalName + '\'' +
                 ", description='" + description + '\'' +
-                ", complete=" + complete;
+                ", complete=" + complete  + '\'' +
+                ", endDate=" + endDate;
 
         for(Subtask task: tasks){
             goalString+=task.toString();
