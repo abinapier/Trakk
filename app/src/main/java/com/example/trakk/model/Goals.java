@@ -23,6 +23,10 @@ public class Goals {
         this.endDate = endDate;
     }
 
+    public Goals() {
+
+    }
+
     //optional description constructor
     public Goals(String name){
         this.goalName = name;
