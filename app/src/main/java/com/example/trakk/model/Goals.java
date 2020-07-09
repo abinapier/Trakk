@@ -14,17 +14,17 @@ public class Goals {
     private String description;
     private boolean complete;
     private Date endDate;
+    private frequency frequency;
 
-    public Goals(String name, String description, Date endDate){
+    public Goals(){}
+
+    public Goals(String name, String description, Date endDate, frequency frequency){
         this.goalName = name;
         tasks = new ArrayList<>();
         complete = false;
         this.description = description;
         this.endDate = endDate;
-    }
-
-    public Goals() {
-
+        this.frequency = frequency;
     }
 
     //optional description constructor
@@ -34,6 +34,7 @@ public class Goals {
         complete = false;
         this.description = "";
         endDate = null;
+        frequency = frequency.None;
     }
 
     public List<Subtask> getTasks() {
@@ -76,6 +77,14 @@ public class Goals {
         this.endDate = endDate;
     }
 
+    public com.example.trakk.model.frequency getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(com.example.trakk.model.frequency frequency) {
+        this.frequency = frequency;
+    }
+
     public int calculatePercentComplete(){
         double total = 0;
         double complete = 0;
@@ -114,3 +123,4 @@ public class Goals {
 
     }
 }
+

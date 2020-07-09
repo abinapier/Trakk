@@ -10,7 +10,7 @@ public class GoalDetailPresenter {
 
 
     }
-    
+
 
     public interface View {
     }

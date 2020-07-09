@@ -18,6 +18,7 @@ import com.example.trakk.model.FileHelper;
 import com.example.trakk.model.Goals;
 import com.example.trakk.model.Subtask;
 import com.example.trakk.model.User;
+import com.example.trakk.model.frequency;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;
@@ -81,24 +82,51 @@ public class MainPresenter implements Runnable{
                                 }else{
                                     //goal is due in the future
                                     Log.d(TAG, "run: date is in future"+endDate.get(Calendar.MONTH) + today.get(Calendar.MONTH));
-                                    switch (daysbetween){
-                                        case 30:
-                                            showNotification(goal,goal.getGoalName()+" is due in 30 days!");
-                                            break;
-                                        case 7:
-                                            showNotification(goal,goal.getGoalName()+" is due in a week!");
-                                            break;
-                                        case 5:
-                                            showNotification(goal,goal.getGoalName()+" is due in 5 days!");
-                                            break;
-                                        case 3:
-                                            showNotification(goal,goal.getGoalName()+" is due in 3 days!");
-                                            break;
-                                        case 1:
-                                        case 0:
-                                            showNotification(goal,goal.getGoalName()+" is due tomorrow!");
-                                            break;
+                                    if(goal.getFrequency()==frequency.None){
+                                        switch (daysbetween){
+                                            case 30:
+                                                showNotification(goal,goal.getGoalName()+" is due in 30 days!");
+                                                break;
+                                            case 7:
+                                                showNotification(goal,goal.getGoalName()+" is due in a week!");
+                                                break;
+                                            case 5:
+                                                showNotification(goal,goal.getGoalName()+" is due in 5 days!");
+                                                break;
+                                            case 3:
+                                                showNotification(goal,goal.getGoalName()+" is due in 3 days!");
+                                                break;
+                                            case 1:
+                                            case 0:
+                                                showNotification(goal,goal.getGoalName()+" is due tomorrow!");
+                                                break;
+                                        }
                                     }
+                                    else{
+                                        frequency curFrequency = goal.getFrequency();
+                                        switch(curFrequency){
+                                            case Daily:
+                                                showNotification(goal,"Have you completed "+goal.getGoalName()+" today?");
+                                                break;
+                                            case Monthly:
+                                                if(today.get(Calendar.DAY_OF_MONTH)==today.getActualMaximum(Calendar.DAY_OF_MONTH)){
+                                                    showNotification(goal,"Have you completed "+goal.getGoalName()+" this month?");
+                                                }
+                                                break;
+                                            case Weekly:
+                                                if(today.get(Calendar.DAY_OF_WEEK)==Calendar.SATURDAY){
+                                                    showNotification(goal,"Have you completed "+goal.getGoalName()+" this week?");
+                                                }
+                                                break;
+                                            case Yearly:
+                                                if(today.get(Calendar.DAY_OF_YEAR)==365){
+                                                    showNotification(goal,"Have you completed "+goal.getGoalName()+" this year?");
+                                                }
+                                                break;
+
+                                        }
+                                    }
+
 
                                 }
                             }
@@ -125,8 +153,8 @@ public class MainPresenter implements Runnable{
     public void createTestFile() throws IOException {
         Date dateOne = new GregorianCalendar(2020, 7, 15).getTime();
         Date dateTwo = new Date();
-        Goals goalOne = new Goals("Test 1", "A goal for testing out file creation and fragments.", dateOne);
-        Goals goalTwo = new Goals("Test 2", "Another goal for testing out file creation and fragments.", dateTwo);
+        Goals goalOne = new Goals("Test 1", "A goal for testing out file creation and fragments.", dateOne, frequency.Daily);
+        Goals goalTwo = new Goals("Test 2", "Another goal for testing out file creation and fragments.", dateTwo, frequency.Weekly);
 
         Subtask subtaskOne = new Subtask("Complete example task.", "One");
         Subtask subtaskTwo = new Subtask("Example task that is completed", "Two");
