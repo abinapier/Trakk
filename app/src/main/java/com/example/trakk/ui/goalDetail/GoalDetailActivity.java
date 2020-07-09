@@ -15,6 +15,7 @@ import com.example.trakk.ui.main.MainActivity;
 public class GoalDetailActivity extends AppCompatActivity {
     private static final String TAG = "goal detail view";
     private String goalName;
+    private GoalDetailPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,7 @@ public class GoalDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_goal_detail);
         Intent myIntent = getIntent();
         this.goalName = myIntent.getStringExtra("goalName");
+        presenter = new GoalDetailPresenter(goalName);
         Log.d(TAG, "onCreate: "+goalName);
     }
 

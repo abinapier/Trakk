@@ -15,7 +15,7 @@ public class User {
         goals.add(newGoal);
     }
 
-    public static List<Goals> getGoals() {
+    public List<Goals> getGoals() {
         return goals;
     }
 
