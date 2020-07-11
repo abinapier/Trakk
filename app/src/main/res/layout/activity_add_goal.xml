@@ -109,12 +109,11 @@
         android:id="@+id/imageButton5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
         android:background="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.235"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/containerTask"
         app:srcCompat="@drawable/ic_target" />
 
     <ImageButton
@@ -133,11 +132,22 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="100dp"
         android:onClick="editGoalButton"
         android:text="Save Goal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/containerTask"
+        android:layout_width="409dp"
+        android:layout_height="279dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aSpinner"
+        app:layout_constraintVertical_bias="0.214"
+        tools:layout_editor_absoluteX="1dp"></LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,10 +24,10 @@ public class GoalPreviewFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, ViewGroup containerTask,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_goal_preview, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_goal_preview, containerTask, false);
 
         return presenter.populateFragment(rootView);
     }
