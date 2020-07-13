@@ -76,7 +76,7 @@ public class AddGoalActivity extends AppCompatActivity implements AdapterView.On
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-        Toast.makeText(this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
@@ -88,7 +88,7 @@ public class AddGoalActivity extends AppCompatActivity implements AdapterView.On
         startActivity(intent);
     }
     public void editGoalButton(View view){
-        Intent intent = new Intent(this, AddGoalActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
