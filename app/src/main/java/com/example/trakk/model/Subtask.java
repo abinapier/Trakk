@@ -11,30 +11,9 @@ import java.util.List;
         private String subTaskName;
         private String description;
         private boolean complete;
-        private Date endDate;
-        private frequency frequency;
+
 
         public Subtask(){}
-
-        public Subtask(String name, String description, Date endDate, frequency frequency){
-            this.subTaskName = name;
-            tasks = new ArrayList<>();
-            complete = false;
-            this.description = description;
-            this.endDate = endDate;
-            this.frequency = frequency;
-        }
-
-        //optional description constructor
-        public Subtask(String name){
-            this.subTaskName = name;
-            tasks = new ArrayList<>();
-            complete = false;
-            this.description = "";
-            endDate = null;
-            frequency = frequency.None;
-        }
-
 
         public Subtask(String description, String name){
         this.subTaskName = subTaskName;

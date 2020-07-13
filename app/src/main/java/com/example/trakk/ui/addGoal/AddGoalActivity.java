@@ -59,7 +59,7 @@ public class AddGoalActivity extends AppCompatActivity implements AdapterView.On
 
 
             }
-            
+
         });
 
 

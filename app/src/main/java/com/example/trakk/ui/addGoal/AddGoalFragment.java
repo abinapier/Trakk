@@ -16,7 +16,7 @@ import com.example.trakk.model.Subtask;
 public class AddGoalFragment extends Fragment {
     public AddGoalFragmentPresenter presenter;
 
-    public AddGoalFragment (Goals curSubtask) { presenter = new AddGoalFragmentPresenter(curSubtask);}
+    public AddGoalFragment (Subtask curSubtask) { presenter = new AddGoalFragmentPresenter(curSubtask);}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup containerTask,

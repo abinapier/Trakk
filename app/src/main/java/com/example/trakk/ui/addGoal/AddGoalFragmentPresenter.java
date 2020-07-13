@@ -7,8 +7,8 @@ import com.example.trakk.model.Subtask;
 
 public class AddGoalFragmentPresenter {
     private static final String TAG = "Subtask Preview Fragment:";
-    public Goals task;
-    public AddGoalFragmentPresenter(Goals task) {
+    public Subtask task;
+    public AddGoalFragmentPresenter(Subtask task) {
         this.task = task;
     }
 

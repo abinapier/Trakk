@@ -23,11 +23,14 @@ import java.util.GregorianCalendar;
 public class AddGoalPresenter implements Runnable {
     private static final String TAG = "AddGoal Presenter:";
     public User user;
+    public Subtask subtaskTestOne;
+    public Subtask subtaskTestTwo;
     private WeakReference<AddGoalActivity> ui;
     public AddGoalPresenter(final WeakReference<AddGoalActivity> ui) throws IOException {
         this.ui = ui;
         createTestFile();
-
+    subtaskTestOne = new Subtask("descriptionOne", "nameOne");
+    subtaskTestTwo = new Subtask("descriptionTwo", "nameTwo");
     }
 
 
@@ -41,29 +44,14 @@ public class AddGoalPresenter implements Runnable {
                 public void run() {
                     Context context = ui.get().getApplicationContext();
                     LinearLayout layout = ui.get().findViewById(R.id.containerTask);
-                    if (FileHelper.fileExists(context.getFilesDir().toString())) {
-                        //file exists, load file and add goal preview fragments
-                        Log.d(TAG, "AddGoalPresenter: File Exists");
-                        try {
-                            //get user object from file
-                            user = FileHelper.ReadFile(context.getFilesDir().toString());
-                            //loop through each goal in file
-                            int subtaskcount = 0;
-                            for (Goals goals : user.getGoals()) {
-                                subtaskcount++;
-                                String tag = "subtaskNum" + subtaskcount;
+                                String tag = "subtaskNumOne";
                                 Log.d(TAG, "run: subtask Found");
                                 FragmentManager fm = ui.get().getSupportFragmentManager();
                                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                                AddGoalFragment newFragment = new AddGoalFragment(goals);
+                                AddGoalFragment newFragment = new AddGoalFragment(subtaskTestOne);
                                 fragmentTransaction.add(R.id.containerTask, newFragment, tag);
                                 fragmentTransaction.commit();
                             }
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
             });
         }
     }
