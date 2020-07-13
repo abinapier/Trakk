@@ -24,6 +24,8 @@ import com.example.trakk.ui.main.MainActivity;
 
 import org.w3c.dom.Text;
 
+import java.io.IOException;
+import java.lang.ref.WeakReference;
 import java.time.DayOfWeek;
 import java.util.Calendar;
 
@@ -31,7 +33,7 @@ public class AddGoalActivity extends AppCompatActivity implements AdapterView.On
     private static final String TAG = "AddGoalActivity";
     private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener onDateSetListener;
-
+    private AddGoalPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +41,13 @@ public class AddGoalActivity extends AppCompatActivity implements AdapterView.On
         setContentView(R.layout.activity_add_goal);
         Spinner aSpinner = findViewById(R.id.aSpinner);
         aSpinner.setOnItemSelectedListener(this);
-
-
+        try {
+            this.presenter = new AddGoalPresenter(new WeakReference<AddGoalActivity>(this));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Thread presenterThread = new Thread(presenter);
+        presenterThread.start();
 
         mDisplayDate = (TextView) findViewById(R.id.tvDate);
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
