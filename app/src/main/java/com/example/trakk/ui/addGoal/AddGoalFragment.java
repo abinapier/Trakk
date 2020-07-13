@@ -9,13 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.trakk.R;
+import com.example.trakk.model.Goals;
 import com.example.trakk.model.Subtask;
 
 
 public class AddGoalFragment extends Fragment {
     public AddGoalFragmentPresenter presenter;
 
-    public AddGoalFragment (Subtask curSubtask) { presenter = new AddGoalFragmentPresenter(curSubtask);}
+    public AddGoalFragment (Goals curSubtask) { presenter = new AddGoalFragmentPresenter(curSubtask);}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup containerTask,

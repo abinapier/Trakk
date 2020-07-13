@@ -109,6 +109,7 @@
         android:id="@+id/imageButton5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="136dp"
         android:background="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.235"
@@ -142,12 +143,12 @@
 
     <LinearLayout
         android:id="@+id/containerTask"
-        android:layout_width="409dp"
-        android:layout_height="279dp"
+        android:layout_width="404dp"
+        android:layout_height="142dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aSpinner"
-        app:layout_constraintVertical_bias="0.214"
-        tools:layout_editor_absoluteX="1dp"></LinearLayout>
+        app:layout_constraintVertical_bias="0.125"
+        tools:layout_editor_absoluteX="3dp"></LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

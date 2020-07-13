@@ -1,16 +1,43 @@
 package com.example.trakk.model;
 
-public class Subtask {
-    private String description;
-    private String name;
-    private boolean complete;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
-    public Subtask() {
 
-    }
+    public class Subtask {
+        private static final String TAG = "Subtask";
+        private List<Subtask> tasks;
+        private String subTaskName;
+        private String description;
+        private boolean complete;
+        private Date endDate;
+        private frequency frequency;
 
-    public Subtask(String description, String name){
-        this.name = name;
+        public Subtask(){}
+
+        public Subtask(String name, String description, Date endDate, frequency frequency){
+            this.subTaskName = name;
+            tasks = new ArrayList<>();
+            complete = false;
+            this.description = description;
+            this.endDate = endDate;
+            this.frequency = frequency;
+        }
+
+        //optional description constructor
+        public Subtask(String name){
+            this.subTaskName = name;
+            tasks = new ArrayList<>();
+            complete = false;
+            this.description = "";
+            endDate = null;
+            frequency = frequency.None;
+        }
+
+
+        public Subtask(String description, String name){
+        this.subTaskName = subTaskName;
         this.description = description;
         complete = false;
     }
@@ -31,14 +58,14 @@ public class Subtask {
         return complete;
     }
 
-    public void setName(String name) { this.name = name; }
-    public String getName() { return name; }
+    public void setName(String name) { this.subTaskName = name; }
+    public String getName() { return subTaskName; }
 
     @Override
     public String toString() {
         return "Subtask{" +
                 "description='" + description + '\'' +
-                ", name='" + name + '\'' +
+                ", name='" + subTaskName + '\'' +
                 ", complete=" + complete +
                 '}';
     }

@@ -1,17 +1,14 @@
 package com.example.trakk.ui.addGoal;
 
-import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
-import com.example.trakk.R;
 import com.example.trakk.model.Goals;
 import com.example.trakk.model.Subtask;
 
 public class AddGoalFragmentPresenter {
     private static final String TAG = "Subtask Preview Fragment:";
-    public Subtask task;
-    public AddGoalFragmentPresenter(Subtask task) {
+    public Goals task;
+    public AddGoalFragmentPresenter(Goals task) {
         this.task = task;
     }
 

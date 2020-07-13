@@ -41,6 +41,7 @@ public class AddGoalActivity extends AppCompatActivity implements AdapterView.On
         aSpinner.setOnItemSelectedListener(this);
 
 
+
         mDisplayDate = (TextView) findViewById(R.id.tvDate);
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +59,7 @@ public class AddGoalActivity extends AppCompatActivity implements AdapterView.On
 
 
             }
+            
         });
 
 
