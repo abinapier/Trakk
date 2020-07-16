@@ -46,7 +46,7 @@ public class GoalDetailPresenter implements Runnable {
                             //get user object from file
                             user = FileHelper.ReadFile(context.getFilesDir().toString());
                             List<Goals> myGoals = user.getGoals();
-                            for (int i = 0; i < myGoals.length(); i++) {
+                            for (int i = 0; i < myGoals.size(); i++) {
                                 Goals curGoal = myGoals.get(i);
                                 if(curGoal.getGoalName() == goalName){
                                     //set the ui values
