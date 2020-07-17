@@ -61,7 +61,7 @@ public class GoalDetailPresenter implements Runnable {
                         }
                     }
                 }
-            }
+            });
         }
     }
 
