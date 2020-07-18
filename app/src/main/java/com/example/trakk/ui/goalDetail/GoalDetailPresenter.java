@@ -27,6 +27,7 @@ public class GoalDetailPresenter implements Runnable {
         //I want to say if goalName is found then load goal name
         //when GoalDetail is pulled up
         this.goalName = goalName;
+
     }
 
 
@@ -53,8 +54,7 @@ public class GoalDetailPresenter implements Runnable {
                                     //set the ui values
                                     TextView goalNameNew = ui.get().findViewById(R.id.goalName);
                                     goalNameNew.setText(goalName);
-                                    layout.addView(goalNameNew);
-                                    layout.invalidate();
+
 
                                     //TextView goalDesc = ui.get().findViewById(R.id.textView2);
                                     //goalNameNew.setText(goalDesc);

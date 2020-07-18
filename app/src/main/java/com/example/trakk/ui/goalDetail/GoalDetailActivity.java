@@ -12,6 +12,8 @@ import com.example.trakk.ui.addGoal.AddGoalActivity;
 import com.example.trakk.ui.addSubtask.AddSubtaskActivity;
 import com.example.trakk.ui.main.MainActivity;
 
+import java.lang.ref.WeakReference;
+
 public class GoalDetailActivity extends AppCompatActivity {
     private static final String TAG = "goal detail view";
     private String goalName;
@@ -25,6 +27,9 @@ public class GoalDetailActivity extends AppCompatActivity {
         this.goalName = myIntent.getStringExtra("goalName");
         presenter = new GoalDetailPresenter(goalName);
         Log.d(TAG, "onCreate: "+goalName);
+
+        Thread presenterThread = new Thread(presenter);
+        presenterThread.start();
     }
 
     public void updateProgress(){
