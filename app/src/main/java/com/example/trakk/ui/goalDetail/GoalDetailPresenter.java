@@ -39,6 +39,7 @@ public class GoalDetailPresenter implements Runnable {
             ui.get().runOnUiThread(new Runnable() {
                 public void run() {
                     Context context = ui.get().getApplicationContext();
+                    LinearLayout layout = ui.get().findViewById(R.id.goalPreviewContainer);
                     if (FileHelper.fileExists(context.getFilesDir().toString())) {
                         //file exists, load file
                         Log.d(TAG, "GoalDetailPresenter: File Exists");
@@ -51,7 +52,8 @@ public class GoalDetailPresenter implements Runnable {
                                 if(curGoal.getGoalName() == goalName){
                                     //set the ui values
                                     TextView goalNameNew = ui.get().findViewById(R.id.goalName);
-                                    goalNameNew.setText(curGoal.getGoalName());
+                                    goalNameNew.setText(goalName);
+                                    layout.addView(goalNameNew);
                                     break;
                                 }
 
