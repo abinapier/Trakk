@@ -58,7 +58,7 @@ public class GoalDetailPresenter implements Runnable {
 
 
                                     TextView goalDesc = ui.get().findViewById(R.id.textView2);
-                                    goalNameNew.setText((CharSequence) goalDesc);
+                                    goalDesc.setText((CharSequence) goalDesc);
                                     break;
                                 }
 
