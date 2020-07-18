@@ -27,6 +27,7 @@ public class GoalDetailPresenter implements Runnable {
         //I want to say if goalName is found then load goal name
         //when GoalDetail is pulled up
         this.goalName = goalName;
+        this.ui = ui;
 
     }
 
