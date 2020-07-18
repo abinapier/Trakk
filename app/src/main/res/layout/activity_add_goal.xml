@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/ic_trakk_01" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/GoalName"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="4dp"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/GoalDescription"
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:layout_marginStart="4dp"
@@ -51,7 +51,7 @@
         android:textColor="#676363"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/GoalName" />
 
     <TextView
         android:id="@+id/textView4"
@@ -118,7 +118,7 @@
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+        app:layout_constraintTop_toBottomOf="@+id/GoalDescription" />
 
     <ImageButton
         android:id="@+id/imageButton5"
@@ -126,6 +126,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:background="#00FFFFFF"
+        android:onClick="editGoalButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/containerTask"

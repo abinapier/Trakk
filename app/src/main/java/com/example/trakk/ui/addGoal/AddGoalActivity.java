@@ -99,9 +99,12 @@ public class AddGoalActivity extends AppCompatActivity implements AdapterView.On
     public void editGoalButton(View view){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        String NameGoal =  findViewById(R.id.GoalName).toString();
+        String GoalDescription = findViewById(R.id.GoalDescription).toString();
+        Bundle NewGoal = new Bundle();
+        NewGoal.putString("GoalName", NameGoal);
+        NewGoal.putString("GoalDescription", GoalDescription);
     }
-
-
 
 }
 
