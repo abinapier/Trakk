@@ -49,11 +49,15 @@ public class GoalDetailPresenter implements Runnable {
                             List<Goals> myGoals = user.getGoals();
                             for (int i = 0; i < myGoals.size(); i++) {
                                 Goals curGoal = myGoals.get(i);
-                                if(curGoal.getGoalName() == goalName){
+                                if(curGoal.getGoalName().equals(goalName)){
                                     //set the ui values
                                     TextView goalNameNew = ui.get().findViewById(R.id.goalName);
                                     goalNameNew.setText(goalName);
                                     layout.addView(goalNameNew);
+
+                                    //TextView goalDesc = ui.get().findViewById(R.id.textView2);
+                                    //goalNameNew.setText(goalDesc);
+                                    //layout.addView(goalDesc);
                                     break;
                                 }
 

@@ -22,6 +22,7 @@
         android:layout_width="228dp"
         android:layout_height="37dp"
         android:layout_marginTop="16dp"
+        android:text="Goal Name"
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +37,8 @@
         android:text="Goal Description..."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goalName" />
+        app:layout_constraintTop_toBottomOf="@+id/goalName"
+        tools:text="@string/description" />
 
     <ProgressBar
         android:id="@+id/progressBar"
