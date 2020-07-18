@@ -34,7 +34,7 @@ public class MainPresenter implements Runnable{
     private static int notificationId = 1;
     public MainPresenter(WeakReference<MainActivity> ui) throws IOException {
         this.ui = ui;
-        //createTestFile();
+        createTestFile();
     }
 
 
