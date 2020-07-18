@@ -24,6 +24,8 @@ import com.example.trakk.ui.main.MainActivity;
 
 import org.w3c.dom.Text;
 
+import java.io.IOException;
+import java.lang.ref.WeakReference;
 import java.time.DayOfWeek;
 import java.util.Calendar;
 
@@ -31,7 +33,7 @@ public class AddGoalActivity extends AppCompatActivity implements AdapterView.On
     private static final String TAG = "AddGoalActivity";
     private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener onDateSetListener;
-
+    private AddGoalPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,13 @@ public class AddGoalActivity extends AppCompatActivity implements AdapterView.On
         setContentView(R.layout.activity_add_goal);
         Spinner aSpinner = findViewById(R.id.aSpinner);
         aSpinner.setOnItemSelectedListener(this);
-
+        try {
+            this.presenter = new AddGoalPresenter(new WeakReference<AddGoalActivity>(this));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Thread presenterThread = new Thread(presenter);
+        presenterThread.start();
 
         mDisplayDate = (TextView) findViewById(R.id.tvDate);
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +66,7 @@ public class AddGoalActivity extends AppCompatActivity implements AdapterView.On
 
 
             }
+
         });
 
 
@@ -71,11 +80,12 @@ public class AddGoalActivity extends AppCompatActivity implements AdapterView.On
 
             }
         };
+
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-        Toast.makeText(this, adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
@@ -87,7 +97,7 @@ public class AddGoalActivity extends AppCompatActivity implements AdapterView.On
         startActivity(intent);
     }
     public void editGoalButton(View view){
-        Intent intent = new Intent(this, AddGoalActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 

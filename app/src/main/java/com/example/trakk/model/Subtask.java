@@ -1,16 +1,22 @@
 package com.example.trakk.model;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+
 public class Subtask {
+    private static final String TAG = "Subtask";
+    private List<Subtask> tasks;
+    private String subTaskName;
     private String description;
-    private String name;
     private boolean complete;
 
-    public Subtask() {
 
-    }
+    public Subtask(){}
 
     public Subtask(String description, String name){
-        this.name = name;
+        this.subTaskName = subTaskName;
         this.description = description;
         complete = false;
     }
@@ -31,14 +37,14 @@ public class Subtask {
         return complete;
     }
 
-    public void setName(String name) { this.name = name; }
-    public String getName() { return name; }
+    public void setName(String name) { this.subTaskName = name; }
+    public String getName() { return subTaskName; }
 
     @Override
     public String toString() {
         return "Subtask{" +
                 "description='" + description + '\'' +
-                ", name='" + name + '\'' +
+                ", name='" + subTaskName + '\'' +
                 ", complete=" + complete +
                 '}';
     }

@@ -14,7 +14,6 @@
         android:id="@+id/imageView4"
         android:layout_width="164dp"
         android:layout_height="47dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,9 +21,10 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
         android:drawableRight="@drawable/ic_8680426781578467082"
         android:drawablePadding="10dp"
         android:ems="10"
@@ -38,18 +38,18 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName5"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:layout_marginTop="8dp"
-        android:paddingTop="2px"
-        android:ems="10"
-        android:hint="Goal Description:"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
         android:drawableRight="@drawable/ic_5957905721557740365"
         android:drawablePadding="2dp"
+        android:ems="10"
+        android:hint="Goal Description:"
         android:inputType="textPersonName"
+        android:paddingTop="2px"
         android:textColor="#676363"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
@@ -57,35 +57,51 @@
         android:id="@+id/textView4"
         android:layout_width="84dp"
         android:layout_height="21dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="8dp"
         android:onClick="addTaskButon"
         android:text="New Task"
         android:textColor="#6299D3"
-        android:textSize="14sp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageButton6"
         app:layout_constraintTop_toBottomOf="@+id/aSpinner" />
 
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="84dp"
+        android:layout_height="21dp"
+        android:onClick="addTaskButon"
+        android:text="Save Goal"
+        android:textColor="#E55644"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
+
     <Spinner
         android:id="@+id/aSpinner"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
         android:entries="@array/Spinner_items"
         android:spinnerMode="dropdown"
         android:splitMotionEvents="true"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDate" />
 
     <TextView
         android:id="@+id/tvDate"
         style="@style/Base.Widget.MaterialComponents.TextView"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
         android:drawableRight="@drawable/ic_icons8_calendar"
         android:drawablePadding="2dp"
         android:paddingLeft="10px"
@@ -101,7 +117,6 @@
         android:textSize="18sp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
 
@@ -109,35 +124,37 @@
         android:id="@+id/imageButton5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="4dp"
         android:background="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/containerTask"
         app:srcCompat="@drawable/ic_target" />
 
     <ImageButton
         android:id="@+id/imageButton6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="3dp"
         android:background="#00FFFFFF"
         android:onClick="addTaskButon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aSpinner"
         app:srcCompat="@drawable/ic_icons8_plus" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:onClick="editGoalButton"
-        android:text="Save Goal"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <LinearLayout
+        android:id="@+id/containerTask"
+        android:layout_width="fill_parent"
+        android:layout_height="265dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="4dp"
+        android:divider="@android:drawable/divider_horizontal_textfield"
+        android:orientation="vertical"
+        android:showDividers="middle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
