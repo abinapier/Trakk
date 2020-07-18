@@ -21,7 +21,7 @@ public class GoalDetailPresenter implements Runnable {
     private User user;
     private WeakReference<GoalDetailActivity> ui;
 
-    GoalDetailPresenter(String goalName) {
+    GoalDetailPresenter(WeakReference<GoalDetailActivity> ui, String goalName) {
 
         //I want to use Filehelper to load the user class.
         //I want to say if goalName is found then load goal name
