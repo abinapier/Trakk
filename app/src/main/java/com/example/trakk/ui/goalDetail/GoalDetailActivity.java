@@ -25,7 +25,7 @@ public class GoalDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_goal_detail);
         Intent myIntent = getIntent();
         this.goalName = myIntent.getStringExtra("goalName");
-        presenter = new GoalDetailPresenter(goalName);
+        presenter = new GoalDetailPresenter(new WeakReference<>(this), goalName);
         Log.d(TAG, "onCreate: "+goalName);
 
         Thread presenterThread = new Thread(presenter);
